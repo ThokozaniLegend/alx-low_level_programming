@@ -9,17 +9,18 @@
  * @src: The source string to copy.
  * Return: A pointer to the destination string.
  */
-char *_strcpy(char *dest, char *src)
+
+char *_strcpy(char *dest, const char *src)
 {
     char *dest_start = dest;
 
-    while (*src != '\0')
+    while (*src)
     {
         *dest = *src;
         dest++;
         src++;
     }
-    *dest = '\0'; // Add the terminating null byte
+    *dest = '\0';
 
     return dest_start;
 }
