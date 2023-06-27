@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -5,15 +7,19 @@
  *           terminating null byte, to a buffer pointed to by @dest.
  * @dest: A buffer to copy the string to.
  * @src: The source string to copy.
+ * Return: A pointer to the destination string.
  */
-
 char *_strcpy(char *dest, char *src)
 {
-        while (*src)
-	{
- 	 *dest = *src;
-	 src++;
-	dest++;
-	}
-	return (dest);
+    char *dest_start = dest;
+
+    while (*src != '\0')
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0'; // Add the terminating null byte
+
+    return dest_start;
 }
