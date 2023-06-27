@@ -5,20 +5,15 @@
  *           terminating null byte, to a buffer pointed to by @dest.
  * @dest: A buffer to copy the string to.
  * @src: The source string to copy.
- *
- * Return: A pointer to the destination string @dest.
  */
-
 
 char *_strcpy(char *dest, char *src)
 {
-	while (*src != '\0') 
-		{
-			*dest = *src;
-       			 dest++;
-        		src++;
-    		}
-	*dest = '\0';
-
-    return dest_start;
+        while (*src)
+	{
+ 	 *dest = *src;
+	 src++;
+	dest++;
+	}
+	return (dest);
 }
